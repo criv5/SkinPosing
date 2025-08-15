@@ -2,41 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My Website</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
-
-  <!-- Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" 
-          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
-          crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js" 
-          integrity="sha256-NGC9JEuTWN4GhTj091wctgjzftr+8WNDmw0H8J5YPYE=" 
-          crossorigin="anonymous"></script>
+  <title>Minecraft Skin Pose</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
 </head>
 <body>
-  <div id="mySkinContainer" style="width:100px; height:200px;"></div>
+  <div id="mySkinContainer" style="width:300px; height:400px;"></div>
 
   <script>
     var skinRender = new SkinRender(
-      {
-        controls: { zoom: true, rotate: true },
-        canvas: { width: 300, height: 600 }
-      },
+      { width: 300, height: 400, controls: true },
       document.getElementById("mySkinContainer")
     );
 
-    var animate = function (t) {
-    var p = skinRender.getPlayerModel();    
-    p.children[2].rotation.x = Math.sin(t * 5) / 2;
-    p.children[3].rotation.x = -Math.sin(t * 5) / 2;
-    p.children[4].rotation.x = Math.sin(t * 5) / 2;
-    p.children[5].rotation.x = -Math.sin(t * 5) / 2;
-};
-    skinRender.render("Lord_Of_Llamaz");
+    skinRender.render("inventivetalent").then(() => {
+      var p = skinRender.getPlayerModel();
+
+      p.children[2].rotation.x = Math.PI / 4; 
+      p.children[3].rotation.x = -Math.PI / 6; 
+      p.children[0].rotation.y = Math.PI / 8; 
+      skinRender.draw();
+    });
   </script>
 </body>
 </html>
