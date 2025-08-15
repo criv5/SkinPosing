@@ -15,6 +15,7 @@
 </head>
 <body>
   <div id="mySkinContainer" style="width:300px; height:400px;"></div>
+    <div id="mySkinContainer2" style="width:300px; height:400px;"></div>
 
   <script>
     var container = document.getElementById("mySkinContainer");
@@ -32,7 +33,22 @@
       player.children[3].rotation.x = -Math.PI / 6;
     });
     skinRender.render("Lord_Of_Llamaz");
-    skinRender.toImage();
+
+        var container2 = document.getElementById("mySkinContainer2");
+    var skinRender2 = new SkinRender(
+      { width: 300, height: 400, controls: true },
+      container2
+    );
+
+    container2.addEventListener("skinRender", function() {
+      var player2 = skinRender2.getPlayerModel();
+      console.log(player2.children); 
+
+      player2.children[0].rotation.y = -Math.PI / 4;
+      player2.children[2].rotation.x = Math.PI / 1;
+      player2.children[3].rotation.x = Math.PI;
+    });
+    skinRender2.render("chillmf");
   </script>
 </body>
 </html>
