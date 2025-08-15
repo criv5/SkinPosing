@@ -15,12 +15,16 @@
       document.getElementById("mySkinContainer")
     );
 
-    skinRender.render("inventivetalent").then(() => {
-      var p = skinRender.getPlayerModel();
+    skinRender.render("Lord_Of_Llamaz").then(() => {
+      var player = skinRender.getPlayerModel();
 
-      p.children[2].rotation.x = Math.PI / 4; 
-      p.children[3].rotation.x = -Math.PI / 6; 
-      p.children[0].rotation.y = Math.PI / 8; 
+      let head = player.getObjectByName("head");
+      let rightArm = player.getObjectByName("rightArm");
+      let leftArm = player.getObjectByName("leftArm");
+
+      if (head) head.rotation.y = Math.PI / 8;  
+      if (rightArm) rightArm.rotation.x = Math.PI/3; 
+      if (leftArm) leftArm.rotation.x = -Math.PI/6;  
       skinRender.draw();
     });
   </script>
