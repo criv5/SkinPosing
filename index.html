@@ -18,7 +18,6 @@
   <script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
 </head>
 <body>
-  <!-- Container for the skin -->
   <div id="mySkinContainer" style="width:100px; height:200px;"></div>
 
   <script>
@@ -29,8 +28,9 @@
       },
       document.getElementById("mySkinContainer")
     );
-
-    skinRender.render("inventivetalent");
+    skinRender.getPlayerModel().children[2].rotation.x = 55;
+    skinRender.getPlayerModel().children[5].rotation.x = 25;
+    skinRender.render("Lord_Of_Llamaz");
   </script>
 </body>
 </html>
