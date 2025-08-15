@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Website</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" 
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js" 
+          integrity="sha256-NGC9JEuTWN4GhTj091wctgjzftr+8WNDmw0H8J5YPYE=" 
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
+</head>
+<body>
+  <!-- Container for the skin -->
+  <div id="mySkinContainer" style="width:300px; height:600px;"></div>
+
+  <script>
+    var skinRender = new SkinRender(
+      {
+        controls: { zoom: true, rotate: true },
+        canvas: { width: 300, height: 600 }
+      },
+      document.getElementById("mySkinContainer")
+    );
+
+    skinRender.render("inventivetalent");
+  </script>
+</body>
+</html>
