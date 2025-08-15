@@ -16,7 +16,7 @@
       document.getElementById("mySkinContainer")
     );
 
-    skinRender.render("inventivetalent").then(() => {
+    skinRender.render("inventivetalent");
       var player = skinRender.getPlayerModel();
 
       console.log(player.children);
@@ -26,7 +26,7 @@
       player.children[3].rotation.x = -Math.PI / 6;
 
       skinRender.draw();
-    });
+
   </script>
 </body>
 </html>
