@@ -28,8 +28,14 @@
       },
       document.getElementById("mySkinContainer")
     );
-    skinRender.getPlayerModel().children[2].rotation.x = 55;
-    skinRender.getPlayerModel().children[5].rotation.x = 25;
+
+    var animate = function (t) {
+    var p = skinRender.getPlayerModel();    
+    p.children[2].rotation.x = Math.sin(t * 5) / 2;
+    p.children[3].rotation.x = -Math.sin(t * 5) / 2;
+    p.children[4].rotation.x = Math.sin(t * 5) / 2;
+    p.children[5].rotation.x = -Math.sin(t * 5) / 2;
+};
     skinRender.render("Lord_Of_Llamaz");
   </script>
 </body>
