@@ -1,33 +1,82 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkinPosing</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
-  <script src="index.js"></script>
-  <style>
-    p {
-      margin-block-start: 1px;
-      margin-block-end: 1px;
-      width: 300px;
-    }
-  </style>
+  <script>
+      const params = new URLSearchParams(document.location.search);
+      const u = params.get("u") ?? "Steve";
+      console.log("Username: " + u);
+  </script>
+</head>
+<body>
+    const params = new URLSearchParams(document.location.search)
+const u = params.get("u") ?? "Steve"
+console.log("Username: " + u)
 
-  <div class="slidecontainer" style="width:200px;"">
-      <p>Head Horizontal Rotation: <span id="hHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="hHorSlider">
+var hHorSlider = document.getElementById("hHorSlider")
+var hHorOutput = document.getElementById("hHorOutput")
+hHorOutput.innerHTML = hHorSlider.value * Math.PI / 180 //default
+hHorSlider.oninput = function () {
+  hHorOutput.innerHTML = this.value * Math.PI / 180
+}
 
-      <p>Head Vertical Rotation: <span id="hVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="hVerSlider">
+var hVerSlider = document.getElementById("hVerSlider")
+var hVerOutput = document.getElementById("hVerOutput")
+hVerOutput.innerHTML = hVerSlider.value * Math.PI / 180 //default
+hVerSlider.oninput = function () {
+  hVerOutput.innerHTML = this.value * Math.PI / 180
+}
 
-      <p>Left Arm Vertical Rotation: <span id="lArmVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="lArmVerSlider">
+var lArmVerSlider = document.getElementById("lArmVerSlider")
+var lArmVerOutput = document.getElementById("lArmVerOutput")
+lArmVerOutput.innerHTML = lArmVerSlider.value * Math.PI / 180 //default
+lArmVerSlider.oninput = function () {
+  lArmVerOutput.innerHTML = this.value * Math.PI / 180
+}
 
-      <p>Left Arm Horizontal Rotation: <span id="lArmHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="lArmHorSlider">
+var lArmHorSlider = document.getElementById("lArmHorSlider")
+var lArmHorOutput = document.getElementById("lArmHorOutput")
+lArmHorOutput.innerHTML = lArmHorSlider.value * Math.PI / 180 //default
+lArmHorSlider.oninput = function () {
+  lArmHorOutput.innerHTML = this.value * Math.PI / 180
+}
 
-      <p>Right Arm Vertical Rotation: <span id="rArmVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rArmVerSlider">
+var rArmVerSlider = document.getElementById("rArmVerSlider")
+var rArmVerOutput = document.getElementById("rArmVerOutput")
+rArmVerOutput.innerHTML = rArmVerSlider.value * Math.PI / 180 //default
+rArmVerSlider.oninput = function () {
+  rArmVerOutput.innerHTML = this.value * Math.PI / 180
+}
 
-      <p>Right Arm Horizontal Rotation: <span id="rArmHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
-  </div>         
-  <div id="mySkinContainer" style="width:40px; height:100px;"></div>
+var rArmHorSlider = document.getElementById("rArmHorSlider")
+var rArmHorOutput = document.getElementById("rArmHorOutput")
+rArmHorOutput.innerHTML = rArmHorSlider.value * Math.PI / 180 //default
+rArmHorSlider.oninput = function () {
+  rArmHorOutput.innerHTML = this.value * Math.PI / 180
+}
+
+var container = document.getElementById("mySkinContainer")
+var skinRender = new SkinRender(
+  { width: 40, height: 100, controls: true },
+  container,
+)
+
+container.addEventListener("skinRender", function () {
+  var player = skinRender.getPlayerModel()
+
+  player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
+  player.children[0].rotation.x = hVerOutput.innerHTML //head vertical
+  player.children[2].rotation.x = lArmVerOutput.innerHTML
+  player.children[2].rotation.z = lArmHorOutput.innerHTML //left arm vertical
+  player.children[3].rotation.x = rArmVerOutput.innerHTML
+  player.children[3].rotation.z = rArmHorOutput.innerHTML //left arm vertical
+})
+skinRender.render(u)
+  </script>
+</body>
+</html>
