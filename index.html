@@ -14,7 +14,7 @@
   </script>
 </head>
 <body>
-  <div class="slidecontainer" style="width:250px;">
+  <div class="slidecontainer" style="width:300px;">
       <p>Head Horizontal Rotation: <span id="hHorOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="hHorSlider">
 
@@ -80,7 +80,7 @@
 
     var container = document.getElementById("mySkinContainer")
     var skinRender = new SkinRender(
-      { width: 40, height: 100, controls: true },
+      { width: 40, height: 100, controls: true, autoresize: false },
       container,
     )
 
