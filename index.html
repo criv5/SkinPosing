@@ -15,10 +15,6 @@
 </head>
 <body>
   <script>
-    const params = new URLSearchParams(document.location.search)
-    const u = params.get("u") ?? "Steve"
-    console.log("Username: " + u)
-
     var hHorSlider = document.getElementById("hHorSlider")
     var hHorOutput = document.getElementById("hHorOutput")
     hHorOutput.innerHTML = hHorSlider.value * Math.PI / 180 //default
