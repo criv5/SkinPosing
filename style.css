@@ -10,7 +10,7 @@
     }
   </style>
 
-  <div class="slidecontainer" style="width:200px;"">
+  <div class="slidecontainer" style="width:200px;">
       <p>Head Horizontal Rotation: <span id="hHorOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="hHorSlider">
 
