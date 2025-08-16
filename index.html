@@ -8,7 +8,8 @@
   <script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/MineRender@1.4.6/dist/skin.min.js"></script>
   <script>
       const params = new URLSearchParams(document.location.search);
-      console.log("found: " + params.get("u"));
+      const u = params.get("u");
+      console.log("found: " + u);
   </script>
 </head>
 <body>
@@ -30,7 +31,7 @@
       player.children[2].rotation.x = Math.PI / 3;
       player.children[3].rotation.x = -Math.PI / 6;
     });
-    skinRender.render("Lord_Of_Llamaz");
+    skinRender.render(u);
 
         var container2 = document.getElementById("mySkinContainer2");
     var skinRender2 = new SkinRender(
@@ -45,7 +46,7 @@
       player2.children[2].rotation.x = Math.PI / 1;
       player2.children[3].rotation.x = Math.PI;
     });
-    skinRender2.render("chillmf");
+    skinRender2.render(u);
   </script>
 </body>
 </html>
