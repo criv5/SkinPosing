@@ -32,6 +32,12 @@
 
       <p>Right Arm Horizontal Rotation: <span id="rArmHorOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
+
+      <p>Left Leg Horizontal Rotation: <span id="rArmHorOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
+
+      <p>Right Leg Horizontal Rotation: <span id="rArmHorOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
   </div>         
   <div id="mySkinContainer" style="width:40px; height:100px;"></div>
 
@@ -76,6 +82,18 @@
     rArmHorOutput.innerHTML = rArmHorSlider.value * Math.PI / 180 //default
     rArmHorSlider.oninput = function () {
       rArmHorOutput.innerHTML = this.value * Math.PI / 180
+
+    var lLegHorSlider = document.getElementById("lLegHorSlider")
+    var lLegHorOutput = document.getElementById("lLegHorOutput")
+    lLegHorOutput.innerHTML = lLegHorSlider.value * Math.PI / 180 //default
+    lLegHorSlider.oninput = function () {
+      lLegHorOutput.innerHTML = this.value * Math.PI / 180
+
+    var rLegHorSlider = document.getElementById("rLegHorSlider")
+    var rLegHorOutput = document.getElementById("rLegHorOutput")
+    rLegHorOutput.innerHTML = rLegHorSlider.value * Math.PI / 180 //default
+    rLegHorSlider.oninput = function () {
+      rLegHorOutput.innerHTML = this.value * Math.PI / 180
     }
 
     var container = document.getElementById("mySkinContainer")
@@ -93,6 +111,10 @@
       player.children[2].rotation.z = lArmHorOutput.innerHTML //left arm vertical
       player.children[3].rotation.x = rArmVerOutput.innerHTML
       player.children[3].rotation.z = rArmHorOutput.innerHTML //left arm vertical
+      player.children[4].rotation.x = lLegVerOutput.innerHTML
+      player.children[4].rotation.z = lLegHorOutput.innerHTML //left arm vertical
+      player.children[5].rotation.x = rLegVerOutput.innerHTML
+      player.children[5].rotation.z = rLegHorOutput.innerHTML //left arm vertical
     })
     skinRender.render(u)
   </script>
