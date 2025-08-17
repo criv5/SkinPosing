@@ -59,9 +59,9 @@
   <script>
     var camYSlider = document.getElementById("camYSlider")
     var camYOutput = document.getElementById("camYOutput")
-    camYOutput.innerHTML = camYSlider.value * Math.PI / 180 //right leg horizontal
+    camYOutput.innerHTML = camYSlider.value//right leg horizontal
     camYSlider.oninput = function () {
-      camYOutput.innerHTML = this.value * Math.PI / 180
+      camYOutput.innerHTML = this.value
     }
     
     var verSlider = document.getElementById("verSlider")
@@ -149,13 +149,12 @@
 
     var container = document.getElementById("mySkinContainer")
     var skinRender = new SkinRender(
-      { width: 40, height: 100, controls: true, autoresize: false, showGrid: true },
+      { width: 40, height: 100, controls: true, autoresize: false, showGrid: true, camera: {y:camYOutput}},
       container,
     )
 
     container.addEventListener("skinRender", function () {
       var player = skinRender.getPlayerModel()
-      skinRender.camera.y = camYOutput.innerHTML
       player.rotation.y = verOutput.innerHTML
       player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
