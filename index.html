@@ -15,6 +15,9 @@
 </head>
 <body>
   <div class="slidecontainer" style="width:300px;">
+        <p>Body Vertical Rotation: <span id="verOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="verSlider">
+    
         <p>Body Horizontal Rotation: <span id="horOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="horSlider">
     
@@ -51,6 +54,13 @@
   <div id="mySkinContainer" style="width:40px; height:100px;"></div>
 
   <script>
+    var verSlider = document.getElementById("verSlider")
+    var verOutput = document.getElementById("verOutput")
+    verOutput.innerHTML = verSlider.value * Math.PI / 180 //right leg horizontal
+    verSlider.oninput = function () {
+      verOutput.innerHTML = this.value * Math.PI / 180
+    }
+    
     var horSlider = document.getElementById("horSlider")
     var horOutput = document.getElementById("horOutput")
     horOutput.innerHTML = horSlider.value * Math.PI / 180 //right leg horizontal
