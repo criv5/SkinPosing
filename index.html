@@ -14,55 +14,175 @@
   </script>
 </head>
 <body>
-  <div class="slidecontainer" style="width:300px;">
-        <p>Camera Y: <span id="camYOutput"></span></p>
-  <input type="range" min="0" max="40" value="20" class="slider" id="camYSlider">
-    
-        <p>Camera Z: <span id="camZOutput"></span></p>
-  <input type="range" min="0" max="100" value="50" class="slider" id="camZSlider">
+<div class="display">
+  <div class="slidecontainer" style="width:600px;">
+    <p>Camera Y: <span id="camYOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="40"
+      value="20"
+      class="slider"
+      id="camYSlider"
+    />
 
-        <p>Camera Vertical Rotation: <span id="camVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="camVerSlider">
-    
-        <p>Body Vertical Rotation: <span id="verOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="verSlider">
-    
-        <p>Body Horizontal Rotation: <span id="horOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="horSlider">
-    
-      <p>Head Horizontal Rotation: <span id="hHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="hHorSlider">
+    <p>Camera Z: <span id="camZOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      class="slider"
+      id="camZSlider"
+    />
 
-      <p>Head Vertical Rotation: <span id="hVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="hVerSlider">
+    <p>Camera Vertical Rotation: <span id="camVerOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="camVerSlider"
+    />
 
-      <p>Left Arm Vertical Rotation: <span id="lArmVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="lArmVerSlider">
+    <p>Camera Horizontal Rotation: <span id="camHorOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="camHorSlider"
+    />
 
-      <p>Left Arm Horizontal Rotation: <span id="lArmHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="lArmHorSlider">
+    <p>Body Vertical Rotation: <span id="verOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="verSlider"
+    />
 
-      <p>Right Arm Vertical Rotation: <span id="rArmVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rArmVerSlider">
+    <p>Body Horizontal Rotation: <span id="horOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="horSlider"
+    />
 
-      <p>Right Arm Horizontal Rotation: <span id="rArmHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
+    <p>Head Horizontal Rotation: <span id="hHorOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="hHorSlider"
+    />
 
-      <p>Left Leg Vertical Rotation: <span id="lLegVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="lLegVerSlider">
+    <p>Head Vertical Rotation: <span id="hVerOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="hVerSlider"
+    />
 
-      <p>Left Leg Horizontal Rotation: <span id="lLegHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="lLegHorSlider">
+    <p>Left Arm Vertical Rotation: <span id="lArmVerOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="lArmVerSlider"
+    />
 
-      <p>Right Leg Vertical Rotation: <span id="rLegVerOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rLegVerSlider">
+    <p>Left Arm Horizontal Rotation: <span id="lArmHorOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="lArmHorSlider"
+    />
 
-      <p>Right Leg Horizontal Rotation: <span id="rLegHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rLegHorSlider">
-  </div>         
-  <div id="mySkinContainer" style="width:40px; height:100px;"></div>
+    <p>Right Arm Vertical Rotation: <span id="rArmVerOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="rArmVerSlider"
+    />
 
+    <p>Right Arm Horizontal Rotation: <span id="rArmHorOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="rArmHorSlider"
+    />
+
+    <p>Left Leg Vertical Rotation: <span id="lLegVerOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="lLegVerSlider"
+    />
+
+    <p>Left Leg Horizontal Rotation: <span id="lLegHorOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="lLegHorSlider"
+    />
+
+    <p>Right Leg Vertical Rotation: <span id="rLegVerOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="rLegVerSlider"
+    />
+
+    <p>Right Leg Horizontal Rotation: <span id="rLegHorOutput"></span></p>
+    <input
+      type="range"
+      min="0"
+      max="360"
+      value="0"
+      class="slider"
+      id="rLegHorSlider"
+    />
+  </div>
+  <div id="mySkinContainer" style="width:1024px; height:1024px;"></div>
+</div>
   <script>
+    const params = new URLSearchParams(document.location.search);
+    const u = params.get("u") ?? "Steve";
+    console.log("Username: " + u);
+
     var camYSlider = document.getElementById("camYSlider")
     var camYOutput = document.getElementById("camYOutput")
     camYOutput.innerHTML = camYSlider.value //camera y distance
@@ -79,9 +199,16 @@
 
     var camVerSlider = document.getElementById("camVerSlider")
     var camVerOutput = document.getElementById("camVerOutput")
-    camVerOutput.innerHTML = camVerSlider.value * Math.PI / 180//camera z distance
+    camVerOutput.innerHTML = camVerSlider.value * Math.PI / 180//camera y rotation
     camVerSlider.oninput = function () {
       camVerOutput.innerHTML = this.value * Math.PI / 180
+    }
+  
+    var camHorSlider = document.getElementById("camHorSlider")
+    var camHorOutput = document.getElementById("camHorOutput")
+    camHorOutput.innerHTML = camHorSlider.value * Math.PI / 180//camera y rotation
+    camHorSlider.oninput = function () {
+      camHorOutput.innerHTML = this.value * Math.PI / 180
     }
     
     var verSlider = document.getElementById("verSlider")
@@ -137,6 +264,7 @@
     var rArmHorOutput = document.getElementById("rArmHorOutput")
     rArmHorOutput.innerHTML = rArmHorSlider.value * Math.PI / 180 //dright arm horizontal
     rArmHorSlider.oninput = function () {
+      rArmHorOutput.innerHTML = this.value * Math.PI / 180
     }
     
     var lLegVerSlider = document.getElementById("lLegVerSlider")
@@ -169,15 +297,20 @@
 
     var container = document.getElementById("mySkinContainer")
     var skinRender = new SkinRender(
-      { width: 40, height: 100, controls: true, autoresize: false, showGrid: true//, 
+      { width: 1024, height: 1024, controls: true, autoresize: false, showGrid: true, 
        
-       //camera: {
-         //type: "perspective",
-         //x: 0,
-         //y: camYOutput.innerHTML,
-         //z: 15,
-         //target: [0,20,0]
-       //}
+       camera: {
+         type: "perspective",
+         x: 0,
+         y: camYOutput.innerHTML,
+         z: 15,
+         target: [0,0,0]
+       },
+
+       canvas: {
+        width: 1024,
+        height: 1024,
+       }
       },
       container,
     )
@@ -186,6 +319,7 @@
       var player = skinRender.getPlayerModel()
       skinRender._camera.position.set(0,camYOutput.innerHTML,camZOutput.innerHTML)
       skinRender._camera.rotation.y = camVerOutput.innerHTML
+      skinRender._camera.rotation.x = camHorOutput.innerHTML
       player.rotation.y = verOutput.innerHTML
       player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
@@ -195,9 +329,9 @@
       player.children[3].rotation.x = rArmVerOutput.innerHTML
       player.children[3].rotation.z = rArmHorOutput.innerHTML //right arm vertical
       player.children[4].rotation.x = lLegVerOutput.innerHTML
-      player.children[4].rotation.z = lLegHorOutput.innerHTML //left arm vertical
+      player.children[4].rotation.z = lLegHorOutput.innerHTML //left leg vertical
       player.children[5].rotation.x = rLegVerOutput.innerHTML
-      player.children[5].rotation.z = rLegHorOutput.innerHTML //left arm vertical
+      player.children[5].rotation.z = rLegHorOutput.innerHTML //right leg vertical
     })
     skinRender.render(u)
   </script>
