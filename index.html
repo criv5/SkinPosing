@@ -176,13 +176,9 @@
       id="rLegHorSlider"
     />
   </div>
-  <div id="mySkinContainer" style="width:1024px; height:1024px;"></div>
+  <div id="skinContainer" style="width:1024px; height:1024px;"></div>
 </div>
   <script>
-    const params = new URLSearchParams(document.location.search);
-    const u = params.get("u") ?? "Steve";
-    console.log("Username: " + u);
-
     var camYSlider = document.getElementById("camYSlider")
     var camYOutput = document.getElementById("camYOutput")
     camYOutput.innerHTML = camYSlider.value //camera y distance
@@ -295,7 +291,7 @@
       rLegHorOutput.innerHTML = this.value * Math.PI / 180
     }
 
-    var container = document.getElementById("mySkinContainer")
+    var container = document.getElementById("skinContainer")
     var skinRender = new SkinRender(
       { width: 1024, height: 1024, controls: true, autoresize: false, showGrid: true, 
        
