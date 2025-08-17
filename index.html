@@ -79,9 +79,9 @@
 
     var camVerSlider = document.getElementById("camVerSlider")
     var camVerOutput = document.getElementById("camVerOutput")
-    camVerOutput.innerHTML = camVerSlider.value //camera z distance
+    camVerOutput.innerHTML = camVerSlider.value * Math.PI / 180//camera z distance
     camVerSlider.oninput = function () {
-      camVerOutput.innerHTML = this.value
+      camVerOutput.innerHTML = this.value * Math.PI / 180
     }
     
     var verSlider = document.getElementById("verSlider")
