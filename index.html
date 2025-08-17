@@ -15,6 +15,9 @@
 </head>
 <body>
   <div class="slidecontainer" style="width:300px;">
+        <p>Body Horizontal Rotation: <span id="horOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="horSlider">
+    
       <p>Head Horizontal Rotation: <span id="hHorOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="hHorSlider">
 
@@ -48,6 +51,13 @@
   <div id="mySkinContainer" style="width:40px; height:100px;"></div>
 
   <script>
+    var horSlider = document.getElementById("horSlider")
+    var horOutput = document.getElementById("horOutput")
+    horOutput.innerHTML = horSlider.value * Math.PI / 180 //right leg horizontal
+    horSlider.oninput = function () {
+      horOutput.innerHTML = this.value * Math.PI / 180
+    }
+    
     var hHorSlider = document.getElementById("hHorSlider")
     var hHorOutput = document.getElementById("hHorOutput")
     hHorOutput.innerHTML = hHorSlider.value * Math.PI / 180 //head horizonta
@@ -125,7 +135,7 @@
 
     container.addEventListener("skinRender", function () {
       var player = skinRender.getPlayerModel()
-
+      player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
       player.children[0].rotation.x = hVerOutput.innerHTML //head vertical
       player.children[2].rotation.x = lArmVerOutput.innerHTML
