@@ -1,5 +1,15 @@
 p {
-  margin-block-start: 1px;
-  margin-block-end: 1px;
-  width: 300px;
+  font-size: 22px;
+  margin-block-start: 4px;
+  margin-block-end: 4px;
+  width: 400px;
+}
+
+body {
+  background: darkcyan;
+}
+    
+.display {
+  display: flex;
+  justify-content: center;
 }
