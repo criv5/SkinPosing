@@ -15,6 +15,9 @@
 </head>
 <body>
   <div class="slidecontainer" style="width:300px;">
+        <p>Camera Height: <span id="camYOutput"></span></p>
+  <input type="range" min="0" max="25" value="0" class="slider" id="camYSlider">
+    
         <p>Body Vertical Rotation: <span id="verOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="verSlider">
     
@@ -54,6 +57,13 @@
   <div id="mySkinContainer" style="width:40px; height:100px;"></div>
 
   <script>
+    var camYSlider = document.getElementById("camYSlider")
+    var camYOutput = document.getElementById("camYOutput")
+    camYOutput.innerHTML = camYSlider.value * Math.PI / 180 //right leg horizontal
+    camYSlider.oninput = function () {
+      camYOutput.innerHTML = this.value * Math.PI / 180
+    }
+    
     var verSlider = document.getElementById("verSlider")
     var verOutput = document.getElementById("verOutput")
     verOutput.innerHTML = verSlider.value * Math.PI / 180 //right leg horizontal
@@ -145,6 +155,7 @@
 
     container.addEventListener("skinRender", function () {
       var player = skinRender.getPlayerModel()
+      skinRender.camera.y = camYOutput.innerHTML
       player.rotation.y = verOutput.innerHTML
       player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
