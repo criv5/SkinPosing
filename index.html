@@ -20,6 +20,9 @@
     
         <p>Camera Z: <span id="camZOutput"></span></p>
   <input type="range" min="0" max="100" value="50" class="slider" id="camZSlider">
+
+        <p>Camera Vertical Rotation: <span id="camVerOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="camVerSlider">
     
         <p>Body Vertical Rotation: <span id="verOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="verSlider">
@@ -72,6 +75,13 @@
     camZOutput.innerHTML = camZSlider.value //camera z distance
     camZSlider.oninput = function () {
       camZOutput.innerHTML = this.value
+    }
+
+    var camVerSlider = document.getElementById("camVerSlider")
+    var camVerOutput = document.getElementById("camVerOutput")
+    camVerOutput.innerHTML = camVerSlider.value //camera z distance
+    camVerSlider.oninput = function () {
+      camVerOutput.innerHTML = this.value
     }
     
     var verSlider = document.getElementById("verSlider")
@@ -175,6 +185,7 @@
     container.addEventListener("skinRender", function () {
       var player = skinRender.getPlayerModel()
       skinRender._camera.position.set(0,camYOutput.innerHTML,camZOutput.innerHTML)
+      skinRender._camera.rotation.y = camVerOutput.innerHTML
       player.rotation.y = verOutput.innerHTML
       player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
