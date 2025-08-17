@@ -15,8 +15,11 @@
 </head>
 <body>
   <div class="slidecontainer" style="width:300px;">
-        <p>Camera Height: <span id="camYOutput"></span></p>
-  <input type="range" min="0" max="25" value="0" class="slider" id="camYSlider">
+        <p>Camera Y: <span id="camYOutput"></span></p>
+  <input type="range" min="0" max="40" value="20" class="slider" id="camYSlider">
+    
+        <p>Camera Z: <span id="camZOutput"></span></p>
+  <input type="range" min="0" max="100" value="50" class="slider" id="camZSlider">
     
         <p>Body Vertical Rotation: <span id="verOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="verSlider">
@@ -59,9 +62,16 @@
   <script>
     var camYSlider = document.getElementById("camYSlider")
     var camYOutput = document.getElementById("camYOutput")
-    camYOutput.innerHTML = camYSlider.value//right leg horizontal
+    camYOutput.innerHTML = camYSlider.value //camera y distance
     camYSlider.oninput = function () {
       camYOutput.innerHTML = this.value
+    }
+    
+    var camZSlider = document.getElementById("camZSlider")
+    var camZOutput = document.getElementById("camZOutput")
+    camZOutput.innerHTML = camZSlider.value //camera z distance
+    camZSlider.oninput = function () {
+      camZOutput.innerHTML = this.value
     }
     
     var verSlider = document.getElementById("verSlider")
@@ -149,22 +159,22 @@
 
     var container = document.getElementById("mySkinContainer")
     var skinRender = new SkinRender(
-      { width: 40, height: 100, controls: true, autoresize: false, showGrid: true, 
+      { width: 40, height: 100, controls: true, autoresize: false, showGrid: true//, 
        
-       camera: {
-         type: "perspective",
-         x: 0,
-         y: camYOutput.innerHTML,
-         z: 15,
-         target: [0,20,0]
-       }
+       //camera: {
+         //type: "perspective",
+         //x: 0,
+         //y: camYOutput.innerHTML,
+         //z: 15,
+         //target: [0,20,0]
+       //}
       },
       container,
     )
 
     container.addEventListener("skinRender", function () {
       var player = skinRender.getPlayerModel()
-      skinRender._camera.position.set(0,camYOutput.innerHTML,15)
+      skinRender._camera.position.set(0,camYOutput.innerHTML,camZOutput.innerHTML)
       player.rotation.y = verOutput.innerHTML
       player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
