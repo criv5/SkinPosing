@@ -33,65 +33,80 @@
       <p>Right Arm Horizontal Rotation: <span id="rArmHorOutput"></span></p>
   <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
 
-      <p>Left Leg Horizontal Rotation: <span id="rArmHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
+      <p>Left Leg Vertical Rotation: <span id="lLegVerOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="lLegVerSlider">
 
-      <p>Right Leg Horizontal Rotation: <span id="rArmHorOutput"></span></p>
-  <input type="range" min="0" max="360" value="0" class="slider" id="rArmHorSlider">
+      <p>Right Leg Vertical Rotation: <span id="rLegVerOutput"></span></p>
+  <input type="range" min="0" max="360" value="0" class="slider" id="rLegVerSlider">
   </div>         
   <div id="mySkinContainer" style="width:40px; height:100px;"></div>
 
   <script>
     var hHorSlider = document.getElementById("hHorSlider")
     var hHorOutput = document.getElementById("hHorOutput")
-    hHorOutput.innerHTML = hHorSlider.value * Math.PI / 180 //default
+    hHorOutput.innerHTML = hHorSlider.value * Math.PI / 180 //head horizonta
     hHorSlider.oninput = function () {
       hHorOutput.innerHTML = this.value * Math.PI / 180
     }
 
     var hVerSlider = document.getElementById("hVerSlider")
     var hVerOutput = document.getElementById("hVerOutput")
-    hVerOutput.innerHTML = hVerSlider.value * Math.PI / 180 //default
+    hVerOutput.innerHTML = hVerSlider.value * Math.PI / 180 //head vertical
     hVerSlider.oninput = function () {
       hVerOutput.innerHTML = this.value * Math.PI / 180
     }
 
     var lArmVerSlider = document.getElementById("lArmVerSlider")
     var lArmVerOutput = document.getElementById("lArmVerOutput")
-    lArmVerOutput.innerHTML = lArmVerSlider.value * Math.PI / 180 //default
+    lArmVerOutput.innerHTML = lArmVerSlider.value * Math.PI / 180 //left arm vertical
     lArmVerSlider.oninput = function () {
       lArmVerOutput.innerHTML = this.value * Math.PI / 180
     }
 
     var lArmHorSlider = document.getElementById("lArmHorSlider")
     var lArmHorOutput = document.getElementById("lArmHorOutput")
-    lArmHorOutput.innerHTML = lArmHorSlider.value * Math.PI / 180 //default
+    lArmHorOutput.innerHTML = lArmHorSlider.value * Math.PI / 180 //left arm horizontal
     lArmHorSlider.oninput = function () {
       lArmHorOutput.innerHTML = this.value * Math.PI / 180
     }
 
     var rArmVerSlider = document.getElementById("rArmVerSlider")
     var rArmVerOutput = document.getElementById("rArmVerOutput")
-    rArmVerOutput.innerHTML = rArmVerSlider.value * Math.PI / 180 //default
+    rArmVerOutput.innerHTML = rArmVerSlider.value * Math.PI / 180 //right arm vertical
     rArmVerSlider.oninput = function () {
       rArmVerOutput.innerHTML = this.value * Math.PI / 180
     }
 
     var rArmHorSlider = document.getElementById("rArmHorSlider")
     var rArmHorOutput = document.getElementById("rArmHorOutput")
-    rArmHorOutput.innerHTML = rArmHorSlider.value * Math.PI / 180 //default
+    rArmHorOutput.innerHTML = rArmHorSlider.value * Math.PI / 180 //dright arm horizontal
     rArmHorSlider.oninput = function () {
-      rArmHorOutput.innerHTML = this.value * Math.PI / 180
-
+    }
+    
+    var lLegVerSlider = document.getElementById("lLegVerSlider")
+    var lLegVerOutput = document.getElementById("lLegVerOutput")
+    lLegVerOutput.innerHTML = lLegVerSlider.value * Math.PI / 180 //left leg vertical
+    lLegVerSlider.oninput = function () {
+      lLegHorOutput.innerHTML = this.value * Math.PI / 180
+    }
+    
     var lLegHorSlider = document.getElementById("lLegHorSlider")
     var lLegHorOutput = document.getElementById("lLegHorOutput")
-    lLegHorOutput.innerHTML = lLegHorSlider.value * Math.PI / 180 //default
+    lLegHorOutput.innerHTML = lLegHorSlider.value * Math.PI / 180 //left leg horizontal
     lLegHorSlider.oninput = function () {
       lLegHorOutput.innerHTML = this.value * Math.PI / 180
-
+    }
+    
+    var rLegVerSlider = document.getElementById("rLegVerSlider")      
+    var rLegVerOutput = document.getElementById("rLegVerOutput")
+    rLegVerOutput.innerHTML = rLegVerSlider.value * Math.PI / 180 //right leg vertical
+    rLegVerSlider.oninput = function () {
+      rLegVerOutput.innerHTML = this.value * Math.PI / 180
+    }
+    
     var rLegHorSlider = document.getElementById("rLegHorSlider")
     var rLegHorOutput = document.getElementById("rLegHorOutput")
-    rLegHorOutput.innerHTML = rLegHorSlider.value * Math.PI / 180 //default
+    rLegHorOutput.innerHTML = rLegHorSlider.value * Math.PI / 180 //right leg horizontal
     rLegHorSlider.oninput = function () {
       rLegHorOutput.innerHTML = this.value * Math.PI / 180
     }
@@ -110,7 +125,7 @@
       player.children[2].rotation.x = lArmVerOutput.innerHTML
       player.children[2].rotation.z = lArmHorOutput.innerHTML //left arm vertical
       player.children[3].rotation.x = rArmVerOutput.innerHTML
-      player.children[3].rotation.z = rArmHorOutput.innerHTML //left arm vertical
+      player.children[3].rotation.z = rArmHorOutput.innerHTML //right arm vertical
       player.children[4].rotation.x = lLegVerOutput.innerHTML
       player.children[4].rotation.z = lLegHorOutput.innerHTML //left arm vertical
       player.children[5].rotation.x = rLegVerOutput.innerHTML
