@@ -164,6 +164,7 @@
 
     container.addEventListener("skinRender", function () {
       var player = skinRender.getPlayerModel()
+      skinRender._camera.position.set(0,camYOutput.innerHTML,15)
       player.rotation.y = verOutput.innerHTML
       player.rotation.x = horOutput.innerHTML
       player.children[0].rotation.y = hHorOutput.innerHTML //head horizontal
